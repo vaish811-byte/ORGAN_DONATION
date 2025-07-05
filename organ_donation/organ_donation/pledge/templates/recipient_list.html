@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipients in Need</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2E86C1;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f6fa;
+        }
+
+        tr:hover {
+            background-color: #dff0fc;
+        }
+
+        td {
+            font-size: 15px;
+            color: #2c3e50;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>People in Need of Organ Donations</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Organ Needed</th>
+            <th>Hospital</th>
+            <th>Urgency</th>
+            <th>Contact</th>
+        </tr>
+        {% for r in recipients %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.required_organ }}</td>
+            <td>{{ r.hospital_name }}</td>
+            <td>{{ r.urgency_level }}</td>
+            <td>{{ r.contact }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

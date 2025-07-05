@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Organ Donation Certificate</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #fff;
+            color: #000;
+            padding: 60px;
+            margin: 30px auto;
+            width: 850px;
+            height: auto;
+            border: 10px double #2E86C1;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2E86C1;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        .details {
+            margin-top: 30px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .signature {
+            margin-top: 80px;
+            text-align: right;
+        }
+
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            margin: 0 auto 5px 0;
+        }
+
+        .signature-title {
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Organ Donation Certificate</div>
+
+        <div class="content">
+            <p>This is to certify that <span class='highlight'>{{ donor.name }} aged {{ donor.age }}</span>
+        has generously pledged the following organ(s):<span class="highlight">{{ donor.organs }}</span>    </p>
+            <!-- <p class="highlight">{{ donor.name }}</p> -->
+          
+          
+        </div>
+
+        <div class="details">
+            <p><strong>Date of Pledge:</strong> {{ donor.date_pledged|date:"F j, Y" }}</p>
+        </div>
+
+        <div class="signature">
+            <div class="signature-line"></div>
+            <div class="signature-title">Authorized Signature</div>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your selfless contribution to saving lives.</p>
+        </div>
+    </div>
+</body>
+</html>
